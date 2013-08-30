@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <title>SekharV Program</title>
+<!-- 0. first step in responsive design is incuding view port tag and bootstrap-responsive css file (in the <head>) */ -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--*bootstrap responsive is included in bootstrap-combined-no-icons.min.css. Then, within the body, we use row-fluid classes within the container class*-->
+   <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+
+   <!--*2. For the .heading and .subheading class, we use the built-in p.lead from bootstrap and also import and use paired Google Fonts to make the style look a little less default.*-->
+   <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">   
+   <style type="text/css">
+
+     /* Large desktop. 1.The NAV bar ismagical. It collapses into a drop down menu in thre mobile view. This is adapted from an example; we use a mediaquery for browsers with less than 980 px width so that NAV bar does not get pushed down too far down on mobile browsers */
+      @media (min-width: 980px) {
+       body {
+         padding-top: 60px;
+       }
+       .linediv-l {
+          border-right: 1px white solid;
+       }
+        /*comment 4*/
+       .linediv-r {
+          border-left: 1px white solid;
+       }  
+     }
+ 
+     /* Lanscape phones and down  */
+      @media (max-width: 480px) {
+       .copy {
+          padding: 2.5% 10%;
+       }
+       .linediv-l {
+          border-bottom: 1px white solid;
+       }
+         /*comment 4*/
+       .linediv-r {
+          border-top: 1px white solid;
+       }
+      } 
+   
+  
+     /*  All Form factors */
+
+     /* Main body and Headings */
+
+     body{
+          font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+     }
+       /*comment 2*/
+     .heading, .subheading {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+          text-align: center;
+     }
+       /*comment 2*/
+     p.lead {
+       padding-top: 1.5%;
+       font-size: 24px;
+       color: red;
+       line-height: 30px; 
+     }    
+     p {
+       font-size: 18px;
+       line-height: 24px;
+     }
+
+     /* Video pitch and Action */ 
+     .pitch {
+       padding: 2.5% 0%;
+     }
+     .order {
+       padding: 2% 0%;
+     }
+      /*comment 3 and 4*/
+     .actions {
+       background-color: #343434;
+       padding: 3% 0%;
+     }
+     .video, .thermometer,.order, .social, .statistics {
+      text-align: center;
+     }
+     .statistics h3, .statistics p {
+      color: white;
+      }
+
+     /* Marketing copy and Footer */
+          /*comment 7*/
+     .copy {
+       padding-top: 2.5%;
+       padding-bottom: 2.5%;
+       text-align: justify;
+      }
+     .asset {
+       padding: 2.5% 0%;
+      }
+     .footer {
+        color: #cccccc;
+        text-align: center;
+     }
+        /*comment 9*/
+     .footer p {
+         font-size:  11px;
+     }
+     .footer a {
+        color: #ccccff;
+     }
+ /* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
+  
+      </style>
+    
+
+
+
+    </head>
+    <body>
+
+       <!--1. Mobile-friendly navbar adopted from example. -->
+       <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+       <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+             <div class="container">
+                <button type="button" class="btn btn-navbar"
+                  data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">SekharV</a>
+                <div class="nav-collapse collapse">
+                  <ul class="nav">
+                    <li><a href="/#">Home</a></li>
+                    <li class="active"><a href="/DD">Doctors' Doctrines</a></li>
+                    <li><a href="#Doctors">DD</a></li>
+                  </ul>
+                </div><!--/.nav-collapse -->
+              </div>
+           </div>
+        </div>
+
+       <!-- We use row-fluid inside containers to achieve a resizable layout -->
+       <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-desigs-using-bootstrap/ -->
+       <!-- http://stackoverflow.com/a/12270322 -->
+         
+
+      <div class="container">
+        <!-- 2. Font and paired font of .heading/.subheading and body from Google Fonts -->
+        <!-- www.google.com/fonts/speciman/Ubuntu -->
+        <!-- www.google.com/fonts/speciman/Ubuntu#pairings -->
+        <div class="row-fluid heading">
+         <div class="span12">
+           <h1>Doctors' Doctrines</h1>
+         </div>
+        </div>
+        <div class="row-fluid subheading">
+	       <div class="span12">
+	    <!-- Special typography from Bootstrap for lead paragraph. -->
+	    <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
+            <p class="lead">Advice from Doctors for Brain Development</p>
+	        </div>
+	      </div>
+       <!--3.For video placeholder, we make use of placehold.i, which is great for quick mockups. We use an offset of one column in the grid to indent the video from the side.-->
+        <div class="row-fluid pitch">
+	        <div class="span5 video">
+            <img class="img-polaroid" src="http://i.imgur.com/ihAkv3i.jpg" />    
+          </div>
+
+   
+	  <!-- 7. Beyond this point, Marketing copy begins. The marketing copy uses the text align CSS propoerty to justify the text and the img-polaroid Bootstrap class to style the images. As with the content further up the page, the overall content is structured as two five column spans, each offset 1 span from the side-->
+	  <!-- https://developer.mozilla.org/en-US/docs/web/CSS/text-align -->
+	  <!-- https://twitter.github.io/bootstrap/base-css.html#images -->
+	  <!-- http://placehold.it -->
+	  <div class="row-fluid section1">
+	    <div class="span5  copy">
+	  
+         <p>According to Doctors, Parents who expose children to outdoor environment, contribute to the babies' cognitive senses opening up, and to the nurturing of brain development. The baby's experience with the external world forms the edifice on the foundation laid by its genes, and influences her learning ability as she grows. Parents must be conscious of the fact that even before the baby is born, she has several billions of brain cells that are required throughout her life. The growth of these cells is to some extent stimulated by the activity of nerve pathways leading to the brain. The greater the stimuli to these pathways through the baby's senses, the more will be the impetus to establishment of connections amongst the brain cells.</p> 
+              
+	    </div>
+	   </div>
+      <div class="span5 copy">
+	      
+        <img class="img-polaroid" src="http://i.imgur.com/uIP8mAC.jpg?1" />                  
+            
+          
+       
+     </div>  
+
+
+	  <div class="row-fluid section2">
+	    <div class="span5 copy copy-left">
+	      
+             
+            
+
+            <p>When your baby is exposed to an environment that is replete with colors, sound, smell, variety etc., the formation of the connections between the neurons (the brain cells) gets intensified. The cuddle that you give as a parent introduces the baby to the new environment in the backdrop of the comfort and security provided by your arms.</p>   
+             
+        </div>    
+              
+	    </div>
+	    
+</script>
+         </body>
+     </html>    
+       
