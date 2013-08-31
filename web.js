@@ -18,6 +18,12 @@ app.get('/', function(request, response) {
   response.send(data);
 });
 
+app.get('/DD', function(request, response) {
+    var buf = fs.readFileSync("./DD.html");
+    response.send(buf.toString());
+});
+
+
 // Render example.com/orders
 app.get('/orders', function(request, response) {
   global.db.Order.findAll().success(function(orders) {
